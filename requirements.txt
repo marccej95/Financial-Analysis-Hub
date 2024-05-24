@@ -7,3 +7,4 @@ plotly.express
 os
 bs4
 dotenv
+intrinsic_functions
