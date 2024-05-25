@@ -1,5 +1,5 @@
 psycopg2-binary
-psycopg2.extras
+psycopg2-binary.extras
 requests
 pandas
 plotly.graph_objects
