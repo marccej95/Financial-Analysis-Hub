@@ -1,4 +1,4 @@
-psycopg2
+psycopg2-binary
 psycopg2.extras
 requests
 pandas
@@ -7,4 +7,4 @@ plotly.express
 os
 bs4
 dotenv
-intrinsic_functions
+
