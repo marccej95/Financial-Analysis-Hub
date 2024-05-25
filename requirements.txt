@@ -1,3 +1,4 @@
+streamlit
 psycopg2-binary
 requests
 pandas
@@ -5,4 +6,4 @@ plotly
 os
 bs4
 dotenv
-streamlit
+
