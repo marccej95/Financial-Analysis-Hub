@@ -16,7 +16,7 @@ ticker_symbol = st.selectbox("Ticker Symbol", options=["NVDA", "INTC", "AMD"])
 img_url, discount_rate = intfunc.get_discount_rate(ticker_symbol)
 
 # Get data from PostgreSQL
-conn = intfunc.connect_db_pagila(os.getenv('DB_USER'), os.getenv('DB_PASS'))
+conn = intfunc.connect_db_pagila(st.secrets["DB_USER"], st.secrets["DB_PASS"])
 ticker_df = intfunc.ticker_db_to_df(conn, ticker_symbol)
 
 fundamental_df = intfunc.finance_db_to_df(conn, "fundamental", ticker_symbol)
