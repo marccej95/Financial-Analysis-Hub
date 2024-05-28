@@ -4,12 +4,9 @@ import requests
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
-import os
 import streamlit as st
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
 
-load_dotenv()
 
 
 
