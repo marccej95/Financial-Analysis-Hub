@@ -5,6 +5,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 import os
+import streamlit as st
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
@@ -17,7 +18,7 @@ load_dotenv()
 def get_full_ticker_data(ticker_symbol):
   """Gets full data to populate table"""
   try:
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker_symbol}&outputsize=full&apikey={os.getenv('API_KEY')}"
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker_symbol}&outputsize=full&apikey={st.secrets["API_KEY"]}"
     response = requests.get(url)
     full_data = response.json()
   except Exception as error:
@@ -29,7 +30,7 @@ def get_full_ticker_data(ticker_symbol):
 def get_recent_ticker_data(ticker_symbol):
   """Gets recent data to update table"""
   try:
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker_symbol}&outputsize=compact&apikey={os.getenv('API_KEY')}"
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker_symbol}&outputsize=compact&apikey={st.secrets["API_KEY"]}"
     response = requests.get(url)
     recent_data = response.json()
   except Exception as error:
@@ -41,7 +42,7 @@ def get_recent_ticker_data(ticker_symbol):
 def get_fundamental_data(ticker_symbol):
   """Gets fundamental data for company overview"""
   try:
-    url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol={ticker_symbol}&apikey={os.getenv('API_KEY')}"
+    url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol={ticker_symbol}&apikey={st.secrets["API_KEY"]}"
     response = requests.get(url)
     fundamental = response.json()
   except Exception as error:
@@ -53,7 +54,7 @@ def get_fundamental_data(ticker_symbol):
 def get_most_recent_income_statement(ticker_symbol):
   """Gets most recent income statement"""
   try:
-    url = f"https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol={ticker_symbol}&apikey={os.getenv('API_KEY')}"
+    url = f"https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol={ticker_symbol}&apikey={st.secrets["API_KEY"]}"
     response = requests.get(url)
     income = response.json()
   except Exception as error:
@@ -77,7 +78,7 @@ def get_most_recent_balance_sheet(ticker_symbol):
 def get_most_recent_cashflow_statement(ticker_symbol):
   """Gets most recent cashflow statement"""
   try:
-    url = f"https://www.alphavantage.co/query?function=CASH_FLOW&symbol={ticker_symbol}&apikey={os.getenv('API_KEY')}"
+    url = f"https://www.alphavantage.co/query?function=CASH_FLOW&symbol={ticker_symbol}&apikey={st.secrets["API_KEY"]}"
     response = requests.get(url)
     cashflow = response.json()
   except Exception as error:
