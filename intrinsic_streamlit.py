@@ -1,9 +1,6 @@
 import streamlit as st
-import os
 import intrinsic_functions as intfunc
-from dotenv import load_dotenv
 
-load_dotenv()
 
 ########## Data visualisation for streamlit ##########
 
