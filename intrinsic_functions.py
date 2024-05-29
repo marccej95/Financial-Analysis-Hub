@@ -107,7 +107,7 @@ def get_discount_rate(ticker_symbol):
 def get_data_for_calculation_yf_webscrape(ticker_symbol):
   """Gets next 5 years growth rate from Yahoo Finance by webscraping"""
   try:
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'}
     url = f"https://uk.finance.yahoo.com/quote/{ticker_symbol}/analysis"
     response = requests.get(url, headers=headers)
   except Exception as error:
