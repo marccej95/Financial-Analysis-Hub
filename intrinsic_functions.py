@@ -114,7 +114,7 @@ def get_data_for_calculation_yf_webscrape(ticker_symbol):
     print(error)
   
   soup = BeautifulSoup(response.text, "html.parser")
-  cash_growth = float(soup.findAll("td", class_="Ta(end) Py(10px)")[0].text.replace("%",""))/100
+  cash_growth = float(soup.findAll("td", class_="Ta(end) Py(10px)")[16].text.replace("%",""))/100
 
   return cash_growth
 
